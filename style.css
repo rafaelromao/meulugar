@@ -22,6 +22,7 @@ header {
     background: #333;
     color: #fff;
     padding: 1rem 0;
+    position: relative;
 }
 
 header .logo {
@@ -48,6 +49,7 @@ header nav ul li a {
     text-decoration: none;
 }
 
+/* Limpar floats */
 .clearfix::after {
     content: "";
     display: block;
@@ -93,7 +95,7 @@ h2 {
 
 .service-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .service {
@@ -103,7 +105,7 @@ h2 {
 
 .portfolio-grid {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .portfolio-item {
@@ -150,4 +152,85 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
+}
+/* ===== MEDIA QUERIES PARA RESPONSIVIDADE ===== */
+@media screen and (max-width: 768px) {
+
+    /* Ajuste de cabeçalho */
+    header .logo {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul {
+        padding: 0;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Ajuste do hero */
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* Serviços e portfólio em coluna */
+    .service-list,
+    .portfolio-grid {
+        flex-direction: column;
+    }
+
+    .service,
+    .portfolio-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 8px 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+        padding: 8px;
+    }
+
+    form button {
+        width: 100%;
+    }
 }
