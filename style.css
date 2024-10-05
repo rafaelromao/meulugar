@@ -22,38 +22,30 @@ header {
     background: #333;
     color: #fff;
     padding: 1rem 0;
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
     position: relative;
 }
 
 header .logo {
-    float: left;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-header nav {
-    float: right;
-}
-
 header nav ul {
     list-style: none;
+    display: flex;
+        gap: 20px;
 }
 
 header nav ul li {
-    display: inline;
-    margin-left: 20px;
+    margin: 0;
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-}
-
-/* Limpar floats */
-.clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
 }
 
 /* Seção Hero */
@@ -153,28 +145,18 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
 /* ===== MEDIA QUERIES PARA RESPONSIVIDADE ===== */
 @media screen and (max-width: 768px) {
-
     /* Ajuste de cabeçalho */
-    header .logo {
-        float: none;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    header nav {
-        float: none;
-        text-align: center;
+    header {
+            flex-direction: column;
     }
 
     header nav ul {
-        padding: 0;
-    }
-
-    header nav ul li {
-        display: block;
-        margin: 10px 0;
+        flex-direction: column;
+            gap: 10px;
+            align-items: center;
     }
 
     /* Ajuste do hero */
@@ -187,13 +169,13 @@ footer {
     }
 
     /* Serviços e portfólio em coluna */
-    .service-list,
-    .portfolio-grid {
+        .service-list,
+        .portfolio-grid {
         flex-direction: column;
     }
 
-    .service,
-    .portfolio-item {
+        .service,
+        .portfolio-item {
         width: 100%;
         margin-bottom: 20px;
     }
@@ -224,8 +206,8 @@ footer {
         width: 90%;
     }
 
-    form input,
-    form textarea {
+        form input,
+        form textarea {
         width: 100%;
         padding: 8px;
     }
